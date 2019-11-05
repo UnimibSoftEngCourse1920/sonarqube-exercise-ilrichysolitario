@@ -22,9 +22,10 @@ public class RunRules extends Statement {
 
     private static Statement applyAll(Statement result, Iterable<TestRule> rules,
             Description description) {
+        Statement resultV = null;
         for (TestRule each : rules) {
-            result = each.apply(result, description);
+            resultV = each.apply(result, description);
         }
-        return result;
+        return resultV;
     }
 }
